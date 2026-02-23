@@ -1,0 +1,17 @@
+{
+  "port": 8787,
+  "host": "127.0.0.1",
+  "allowedHosts": ["www.reddit.com", "reddit.com"],
+  "maxBytes": 2000000,
+  "timeoutMs": 10000,
+  "feeds": [
+    {
+      "name": "Reddit: SMU Mustangs (global search)",
+      "url": "https://www.reddit.com/search.rss?q=SMU%20Mustangs&sort=new"
+    },
+    {
+      "name": "r/CFB: SMU Mustangs",
+      "url": "https://www.reddit.com/r/CFB/search.rss?q=SMU%20Mustangs&restrict_sr=1&sort=new"
+    }
+  ]
+}

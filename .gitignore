@@ -1,0 +1,12 @@
+# Node
+node_modules/
+
+# Local config (do not publish secrets)
+server/config.json
+
+# OS noise
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
