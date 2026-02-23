@@ -1,6 +1,7 @@
 import express from "express";
 import fs from "fs";
 import path from "path";
+import url from "url";
 import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -16,6 +17,14 @@ function loadConfig() {
 const cfg = loadConfig();
 
 const app = express();
+
+// Serve the frontend from ../web so there are no CORS issues
+const WEB_DIR = path.join(__dirname, "..", "web");
+app.use(express.static(WEB_DIR));
+
+app.get("/", (req, res) => {
+  res.sendFile(path.join(WEB_DIR, "index.html"));
+});
 
 // Local-only by default
 const HOST = cfg.host || "127.0.0.1";
